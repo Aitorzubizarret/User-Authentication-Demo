@@ -9,35 +9,35 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LogInViewController" customModule="UserAuthenticationDemo" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="UserAuthenticationDemo" customModuleProvider="target">
             <connections>
-                <outlet property="mainTitleLabel" destination="dar-ZK-zSd" id="DbT-HY-l87"/>
-                <outlet property="view" destination="iN0-l3-epB" id="XY0-7n-1Ze"/>
+                <outlet property="mainTitleLabel" destination="nXJ-db-6OB" id="Vgm-FW-qWY"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dar-ZK-zSd">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXJ-db-6OB">
                     <rect key="frame" x="0.0" y="64" width="414" height="32"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="32" id="EKx-BR-XJP"/>
+                        <constraint firstAttribute="height" constant="32" id="PGB-yd-4ef"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="dar-ZK-zSd" secondAttribute="trailing" id="1LT-5O-srA"/>
-                <constraint firstItem="dar-ZK-zSd" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="H9X-hN-q7o"/>
-                <constraint firstItem="dar-ZK-zSd" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="NCR-Y8-Cjo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nXJ-db-6OB" secondAttribute="trailing" id="BG7-uR-cn8"/>
+                <constraint firstItem="nXJ-db-6OB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="LNN-aT-UIJ"/>
+                <constraint firstItem="nXJ-db-6OB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vPJ-Ju-usF"/>
             </constraints>
-            <point key="canvasLocation" x="142" y="136"/>
+            <point key="canvasLocation" x="141" y="136"/>
         </view>
     </objects>
     <resources>

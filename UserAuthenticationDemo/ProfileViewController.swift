@@ -1,13 +1,13 @@
 //
-//  ViewController.swift
+//  ProfileViewController.swift
 //  UserAuthenticationDemo
 //
-//  Created by Aitor Zubizarreta Perez on 24/01/2021.
+//  Created by Aitor Zubizarreta Perez on 25/01/2021.
 //
 
 import UIKit
 
-class LogInViewController: UIViewController {
+class ProfileViewController: UIViewController {
 
     // MARK: UI Elements
     
@@ -17,13 +17,12 @@ class LogInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
-        
         self.configureUI()
     }
-    
+
     private func configureUI() {
-        self.mainTitleLabel.text = "Log In"
+        self.mainTitleLabel.text = "Profile"
     }
 }
-

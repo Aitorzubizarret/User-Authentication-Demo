@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LogInViewController" customModule="UserAuthenticationDemo" customModuleProvider="target">
             <connections>
+                <outlet property="AppleSignInButtonView" destination="ol8-wa-WF7" id="YGo-uS-0Bh"/>
                 <outlet property="mainTitleLabel" destination="dar-ZK-zSd" id="DbT-HY-l87"/>
                 <outlet property="view" destination="iN0-l3-epB" id="XY0-7n-1Ze"/>
             </connections>
@@ -29,6 +30,13 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ol8-wa-WF7">
+                    <rect key="frame" x="20" y="116" width="374" height="65"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="65" id="qsE-jh-TsE"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -36,8 +44,11 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="dar-ZK-zSd" secondAttribute="trailing" id="1LT-5O-srA"/>
                 <constraint firstItem="dar-ZK-zSd" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="H9X-hN-q7o"/>
                 <constraint firstItem="dar-ZK-zSd" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="NCR-Y8-Cjo"/>
+                <constraint firstItem="ol8-wa-WF7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="PKt-O1-O2r"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ol8-wa-WF7" secondAttribute="trailing" constant="20" id="XIF-l5-ZT7"/>
+                <constraint firstItem="ol8-wa-WF7" firstAttribute="top" secondItem="dar-ZK-zSd" secondAttribute="bottom" constant="20" id="kIM-Am-Q0Z"/>
             </constraints>
-            <point key="canvasLocation" x="142" y="136"/>
+            <point key="canvasLocation" x="140.57971014492756" y="135.9375"/>
         </view>
     </objects>
     <resources>

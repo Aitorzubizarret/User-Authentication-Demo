@@ -12,6 +12,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="UserAuthenticationDemo" customModuleProvider="target">
             <connections>
                 <outlet property="mainTitleLabel" destination="nXJ-db-6OB" id="Vgm-FW-qWY"/>
+                <outlet property="userEmailLabel" destination="DRc-fG-qnH" id="elW-wR-Mhp"/>
+                <outlet property="userFullNameLabel" destination="Ovc-aZ-qfM" id="PIs-E1-zli"/>
+                <outlet property="userIdentifierLabel" destination="Eny-EN-Udh" id="5oL-N0-jdw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,13 +32,45 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eny-EN-Udh">
+                    <rect key="frame" x="20" y="176" width="374" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="ea5-S3-pBz"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ovc-aZ-qfM">
+                    <rect key="frame" x="20" y="217" width="374" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRc-fG-qnH">
+                    <rect key="frame" x="20" y="258" width="374" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="Ovc-aZ-qfM" firstAttribute="trailing" secondItem="Eny-EN-Udh" secondAttribute="trailing" id="0vY-ay-f2T"/>
+                <constraint firstItem="DRc-fG-qnH" firstAttribute="trailing" secondItem="Ovc-aZ-qfM" secondAttribute="trailing" id="6vH-fd-bQt"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nXJ-db-6OB" secondAttribute="trailing" id="BG7-uR-cn8"/>
+                <constraint firstItem="Ovc-aZ-qfM" firstAttribute="top" secondItem="Eny-EN-Udh" secondAttribute="bottom" constant="20" id="BG9-4f-x7F"/>
                 <constraint firstItem="nXJ-db-6OB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="LNN-aT-UIJ"/>
+                <constraint firstItem="Eny-EN-Udh" firstAttribute="top" secondItem="nXJ-db-6OB" secondAttribute="bottom" constant="80" id="PoX-Qf-dE9"/>
+                <constraint firstItem="Ovc-aZ-qfM" firstAttribute="height" secondItem="Eny-EN-Udh" secondAttribute="height" id="Rp9-WO-4zE"/>
+                <constraint firstItem="DRc-fG-qnH" firstAttribute="leading" secondItem="Ovc-aZ-qfM" secondAttribute="leading" id="T7g-6b-d1C"/>
+                <constraint firstItem="DRc-fG-qnH" firstAttribute="top" secondItem="Ovc-aZ-qfM" secondAttribute="bottom" constant="20" id="YBC-Bb-XN6"/>
+                <constraint firstItem="Ovc-aZ-qfM" firstAttribute="leading" secondItem="Eny-EN-Udh" secondAttribute="leading" id="bAC-sF-Q2R"/>
+                <constraint firstItem="DRc-fG-qnH" firstAttribute="height" secondItem="Ovc-aZ-qfM" secondAttribute="height" id="dOL-hl-iAa"/>
+                <constraint firstItem="Eny-EN-Udh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="tfN-XP-yVd"/>
                 <constraint firstItem="nXJ-db-6OB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vPJ-Ju-usF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Eny-EN-Udh" secondAttribute="trailing" constant="20" id="vff-Bd-TxB"/>
             </constraints>
             <point key="canvasLocation" x="141" y="136"/>
         </view>

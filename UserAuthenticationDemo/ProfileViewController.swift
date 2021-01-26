@@ -12,6 +12,15 @@ class ProfileViewController: UIViewController {
     // MARK: UI Elements
     
     @IBOutlet weak var mainTitleLabel: UILabel!
+    @IBOutlet weak var userIdentifierLabel: UILabel!
+    @IBOutlet weak var userFullNameLabel: UILabel!
+    @IBOutlet weak var userEmailLabel: UILabel!
+    
+    // MARK: Properties
+    
+    var userIdentidier: String = ""
+    var userFullName: String = ""
+    var userEmail: String = ""
     
     // MARK: Methods
     
@@ -22,7 +31,13 @@ class ProfileViewController: UIViewController {
         self.configureUI()
     }
 
+    ///
+    /// Configures the UI Elements.
+    ///
     private func configureUI() {
         self.mainTitleLabel.text = "Profile"
+        self.userIdentifierLabel.text = "ID: \(self.userIdentidier)"
+        self.userFullNameLabel.text = "Name: \(self.userFullName)"
+        self.userEmailLabel.text = "Email: \(self.userEmail)"
     }
 }

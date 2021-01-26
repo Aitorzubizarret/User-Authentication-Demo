@@ -28,6 +28,7 @@
 		427F714D25BDA8DF00B94B77 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		42A29BA425BF703900C7E57A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		42A29BA525BF703900C7E57A /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		42A29BAA25BF739C00C7E57A /* UserAuthenticationDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UserAuthenticationDemo.entitlements; sourceTree = "<group>"; };
 		42CCBA9725BDCCC10096FCD8 /* LogInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogInViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,6 +63,7 @@
 		427F713725BDA67000B94B77 /* UserAuthenticationDemo */ = {
 			isa = PBXGroup;
 			children = (
+				42A29BAA25BF739C00C7E57A /* UserAuthenticationDemo.entitlements */,
 				427F713825BDA67100B94B77 /* AppDelegate.swift */,
 				427F713A25BDA67100B94B77 /* SceneDelegate.swift */,
 				427F713C25BDA67100B94B77 /* LogInViewController.swift */,
@@ -288,6 +290,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = UserAuthenticationDemo/UserAuthenticationDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9WUS7ZBGW;
 				INFOPLIST_FILE = UserAuthenticationDemo/Info.plist;
@@ -308,6 +311,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = UserAuthenticationDemo/UserAuthenticationDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9WUS7ZBGW;
 				INFOPLIST_FILE = UserAuthenticationDemo/Info.plist;

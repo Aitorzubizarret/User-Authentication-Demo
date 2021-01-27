@@ -15,6 +15,10 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var userIdentifierLabel: UILabel!
     @IBOutlet weak var userFullNameLabel: UILabel!
     @IBOutlet weak var userEmailLabel: UILabel!
+    @IBOutlet weak var signOutButton: UIButton!
+    @IBAction func signOutButtonPressed(_ sender: Any) {
+        self.signOut()
+    }
     
     // MARK: Properties
     
@@ -39,5 +43,13 @@ class ProfileViewController: UIViewController {
         self.userIdentifierLabel.text = "ID: \(self.userIdentidier)"
         self.userFullNameLabel.text = "Name: \(self.userFullName)"
         self.userEmailLabel.text = "Email: \(self.userEmail)"
+        self.signOutButton.setTitle("Sign Out", for: .normal)
+    }
+    
+    ///
+    /// Sign Out.
+    ///
+    private func signOut() {
+        print("Sign Out")
     }
 }

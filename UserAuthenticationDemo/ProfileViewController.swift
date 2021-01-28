@@ -47,9 +47,16 @@ class ProfileViewController: UIViewController {
     }
     
     ///
-    /// Sign Out.
+    /// Signs Out and goes back to Login screen.
     ///
     private func signOut() {
-        print("Sign Out")
+        // Sign out
+        
+        // Creates the ViewController.
+        let loginVC = LogInViewController(nibName: "LogInViewController", bundle: nil)
+        
+        // Displays the ViewController.
+        let rootVC = UIApplication.shared.windows.first { $0.isKeyWindow }
+        rootVC?.rootViewController = loginVC
     }
 }

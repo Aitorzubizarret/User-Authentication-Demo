@@ -55,6 +55,21 @@ class LogInViewController: UIViewController {
         authController.presentationContextProvider = self
         authController.performRequests()
     }
+    
+    ///
+    /// Go to ProfileViewController.
+    ///
+    private func goToProfile(identifier: String, fullName: String, email: String) {
+        // Creates the ViewController.
+        let profileVC = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
+        profileVC.userIdentidier = "\(identifier)"
+        profileVC.userFullName = "\(fullName)"
+        profileVC.userEmail = "\(email)"
+        
+        // Displays the ViewController.
+        let rootVC = UIApplication.shared.windows.first { $0.isKeyWindow }
+        rootVC?.rootViewController = profileVC
+    }
 }
 
 ///
@@ -76,15 +91,7 @@ extension LogInViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
             let fullName: String = appleIDCredentials.fullName?.description ?? ""
             let email: String = appleIDCredentials.email ?? ""
             
-            // Creates the ViewController.
-            let profileVC = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
-            profileVC.userIdentidier = "\(userIdentifier)"
-            profileVC.userFullName = "\(fullName)"
-            profileVC.userEmail = "\(email)"
-            
-            // Displays the ViewController.
-            let rootVC = UIApplication.shared.windows.first { $0.isKeyWindow }
-            rootVC?.rootViewController = profileVC
+            self.goToProfile(identifier: userIdentifier, fullName: fullName, email: email)
         }
         
     }

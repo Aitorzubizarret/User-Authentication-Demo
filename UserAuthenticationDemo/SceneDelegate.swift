@@ -21,7 +21,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = LogInViewController()
+        
+        // Check local data - Is a user logged in already?
+        let localData: Persistence = Persistence()
+        if localData.isSessionOpen() {
+            window?.rootViewController = ProfileViewController()
+        } else {
+            window?.rootViewController = LogInViewController()
+        }
+        
         window?.makeKeyAndVisible()
     }
 

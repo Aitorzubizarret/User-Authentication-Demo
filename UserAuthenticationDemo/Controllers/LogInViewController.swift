@@ -19,7 +19,6 @@ class LogInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         self.configureUI()
         self.addAppleSignIn()
@@ -57,14 +56,21 @@ class LogInViewController: UIViewController {
     }
     
     ///
+    /// Saves users data locally.
+    ///
+    private func saveDataLocally(identifier: String, fullName: String, email: String) {
+        // Save data locally.
+        let localData: Persistence = Persistence()
+        localData.saveAppleSignInUserData(id: identifier, fullName: fullName, email: email)
+        localData.saveOpenSession()
+    }
+    
+    ///
     /// Go to ProfileViewController.
     ///
     private func goToProfile(identifier: String, fullName: String, email: String) {
         // Creates the ViewController.
         let profileVC = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
-        profileVC.userIdentidier = "\(identifier)"
-        profileVC.userFullName = "\(fullName)"
-        profileVC.userEmail = "\(email)"
         
         // Displays the ViewController.
         let rootVC = UIApplication.shared.windows.first { $0.isKeyWindow }
@@ -76,6 +82,7 @@ class LogInViewController: UIViewController {
 /// MARK : Apple Sign-In Auth Service Delegate and Context Provider
 ///
 extension LogInViewController: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
+    
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         return self.view.window!
     }
@@ -84,16 +91,16 @@ extension LogInViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
     /// Apple Sign-In Completed with Success.
     ///
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-        
         // Check the received authorization.
         if let appleIDCredentials = authorization.credential as? ASAuthorizationAppleIDCredential {
             let userIdentifier: String = appleIDCredentials.user
             let fullName: String = appleIDCredentials.fullName?.description ?? ""
             let email: String = appleIDCredentials.email ?? ""
             
+            self.saveDataLocally(identifier: userIdentifier, fullName: fullName, email: email)
+            
             self.goToProfile(identifier: userIdentifier, fullName: fullName, email: email)
         }
-        
     }
     
     ///

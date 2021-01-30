@@ -22,6 +22,7 @@ class ProfileViewController: UIViewController {
     
     // MARK: Properties
     
+    var user: User?
     var userIdentidier: String = ""
     var userFullName: String = ""
     var userEmail: String = ""
@@ -30,8 +31,14 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // Get Local Data.
+        let localData: Persistence = Persistence()
+        self.user = localData.getAppleSignIntUserData()
+        self.userIdentidier = self.user?.id ?? ""
+        self.userFullName = self.user?.name ?? ""
+        self.userEmail = self.user?.email ?? ""
+        
         self.configureUI()
     }
 
@@ -50,7 +57,9 @@ class ProfileViewController: UIViewController {
     /// Signs Out and goes back to Login screen.
     ///
     private func signOut() {
-        // Sign out
+        // Sign out.
+        let localData: Persistence = Persistence()
+        localData.deleteOpenSession()
         
         // Creates the ViewController.
         let loginVC = LogInViewController(nibName: "LogInViewController", bundle: nil)

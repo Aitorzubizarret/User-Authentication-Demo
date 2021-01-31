@@ -9,22 +9,31 @@
 /* Begin PBXBuildFile section */
 		427F713925BDA67100B94B77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427F713825BDA67100B94B77 /* AppDelegate.swift */; };
 		427F713B25BDA67100B94B77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427F713A25BDA67100B94B77 /* SceneDelegate.swift */; };
-		427F713D25BDA67100B94B77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427F713C25BDA67100B94B77 /* ViewController.swift */; };
+		427F713D25BDA67100B94B77 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427F713C25BDA67100B94B77 /* LogInViewController.swift */; };
 		427F714225BDA67100B94B77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 427F714125BDA67100B94B77 /* Assets.xcassets */; };
 		427F714525BDA67100B94B77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 427F714325BDA67100B94B77 /* LaunchScreen.storyboard */; };
-		42CCBA9825BDCCC10096FCD8 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42CCBA9725BDCCC10096FCD8 /* ViewController.xib */; };
+		42A29BA625BF703900C7E57A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A29BA425BF703900C7E57A /* ProfileViewController.swift */; };
+		42A29BA725BF703900C7E57A /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42A29BA525BF703900C7E57A /* ProfileViewController.xib */; };
+		42B8B9DD25C4B4E30058D77B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B8B9DC25C4B4E30058D77B /* User.swift */; };
+		42B8B9E225C4C45E0058D77B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B8B9E125C4C45E0058D77B /* Persistence.swift */; };
+		42CCBA9825BDCCC10096FCD8 /* LogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42CCBA9725BDCCC10096FCD8 /* LogInViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		427F713525BDA67000B94B77 /* UserAuthenticationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserAuthenticationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		427F713825BDA67100B94B77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		427F713A25BDA67100B94B77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		427F713C25BDA67100B94B77 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		427F713C25BDA67100B94B77 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		427F714125BDA67100B94B77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		427F714425BDA67100B94B77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		427F714625BDA67100B94B77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		427F714D25BDA8DF00B94B77 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		42CCBA9725BDCCC10096FCD8 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		42A29BA425BF703900C7E57A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		42A29BA525BF703900C7E57A /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		42A29BAA25BF739C00C7E57A /* UserAuthenticationDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UserAuthenticationDemo.entitlements; sourceTree = "<group>"; };
+		42B8B9DC25C4B4E30058D77B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		42B8B9E125C4C45E0058D77B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		42CCBA9725BDCCC10096FCD8 /* LogInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogInViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,15 +67,44 @@
 		427F713725BDA67000B94B77 /* UserAuthenticationDemo */ = {
 			isa = PBXGroup;
 			children = (
+				42B8B9DB25C4B4C30058D77B /* Controllers */,
+				42B8B9DA25C4B4BC0058D77B /* Views */,
+				42B8B9D925C4B4B50058D77B /* Models */,
+				42A29BAA25BF739C00C7E57A /* UserAuthenticationDemo.entitlements */,
 				427F713825BDA67100B94B77 /* AppDelegate.swift */,
 				427F713A25BDA67100B94B77 /* SceneDelegate.swift */,
-				427F713C25BDA67100B94B77 /* ViewController.swift */,
-				42CCBA9725BDCCC10096FCD8 /* ViewController.xib */,
+				42B8B9E125C4C45E0058D77B /* Persistence.swift */,
 				427F714125BDA67100B94B77 /* Assets.xcassets */,
 				427F714325BDA67100B94B77 /* LaunchScreen.storyboard */,
 				427F714625BDA67100B94B77 /* Info.plist */,
 			);
 			path = UserAuthenticationDemo;
+			sourceTree = "<group>";
+		};
+		42B8B9D925C4B4B50058D77B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				42B8B9DC25C4B4E30058D77B /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		42B8B9DA25C4B4BC0058D77B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				42CCBA9725BDCCC10096FCD8 /* LogInViewController.xib */,
+				42A29BA525BF703900C7E57A /* ProfileViewController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		42B8B9DB25C4B4C30058D77B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				427F713C25BDA67100B94B77 /* LogInViewController.swift */,
+				42A29BA425BF703900C7E57A /* ProfileViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +165,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				427F714525BDA67100B94B77 /* LaunchScreen.storyboard in Resources */,
-				42CCBA9825BDCCC10096FCD8 /* ViewController.xib in Resources */,
+				42CCBA9825BDCCC10096FCD8 /* LogInViewController.xib in Resources */,
+				42A29BA725BF703900C7E57A /* ProfileViewController.xib in Resources */,
 				427F714225BDA67100B94B77 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,8 +178,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				427F713D25BDA67100B94B77 /* ViewController.swift in Sources */,
+				427F713D25BDA67100B94B77 /* LogInViewController.swift in Sources */,
 				427F713925BDA67100B94B77 /* AppDelegate.swift in Sources */,
+				42A29BA625BF703900C7E57A /* ProfileViewController.swift in Sources */,
+				42B8B9E225C4C45E0058D77B /* Persistence.swift in Sources */,
+				42B8B9DD25C4B4E30058D77B /* User.swift in Sources */,
 				427F713B25BDA67100B94B77 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +322,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = UserAuthenticationDemo/UserAuthenticationDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9WUS7ZBGW;
 				INFOPLIST_FILE = UserAuthenticationDemo/Info.plist;
@@ -300,6 +343,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = UserAuthenticationDemo/UserAuthenticationDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9WUS7ZBGW;
 				INFOPLIST_FILE = UserAuthenticationDemo/Info.plist;

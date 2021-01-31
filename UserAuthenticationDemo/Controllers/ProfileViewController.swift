@@ -34,7 +34,7 @@ class ProfileViewController: UIViewController {
         
         // Get Local Data.
         let localData: Persistence = Persistence()
-        self.user = localData.getAppleSignIntUserData()
+        self.user = localData.getAppleSignInUserData()
         self.userIdentidier = self.user?.id ?? ""
         self.userFullName = self.user?.name ?? ""
         self.userEmail = self.user?.email ?? ""

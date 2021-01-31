@@ -77,7 +77,7 @@ class LogInViewController: UIViewController {
     ///
     private func getUserLocalData() -> User? {
         let localData: Persistence = Persistence()
-        return localData.getAppleSignIntUserData()
+        return localData.getAppleSignInUserData()
     }
     
     ///

@@ -59,7 +59,7 @@ struct Persistence {
     ///
     /// Get locally saved User data obtained from Apple Sign In / Authentication service.
     ///
-    func getAppleSignIntUserData() -> User?{
+    func getAppleSignInUserData() -> User?{
         var user: User?
         let localData: [String: String]? = self.userDefaults.object(forKey: Keys.appleSignInUserData.rawValue) as? [String: String]
         

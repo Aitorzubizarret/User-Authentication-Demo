@@ -27,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let localData: Persistence = Persistence()
         if localData.isSessionOpen() {
             // Check
-            if let savedUser = localData.getAppleSignIntUserData() {
+            if let savedUser = localData.getAppleSignInUserData() {
                 ASAuthorizationAppleIDProvider().getCredentialState(forUserID: savedUser.id) { (credentialState, error) in
                     switch credentialState {
                     case .authorized:

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AuthenticationServices
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -19,18 +20,48 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-        window?.windowScene = windowScene
+        self.window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        self.window?.windowScene = windowScene
         
         // Check local data - Is a user logged in already?
         let localData: Persistence = Persistence()
         if localData.isSessionOpen() {
-            window?.rootViewController = ProfileViewController()
+            // Check
+            if let savedUser = localData.getAppleSignIntUserData() {
+                ASAuthorizationAppleIDProvider().getCredentialState(forUserID: savedUser.id) { (credentialState, error) in
+                    switch credentialState {
+                    case .authorized:
+                        DispatchQueue.main.async {
+                            self.window?.rootViewController = ProfileViewController()
+                        }
+                    case .revoked:
+                        print("User revoked authorization.")
+                        DispatchQueue.main.async {
+                            localData.deleteOpenSession()
+                            localData.deleteAppleSignInUserData()
+                            self.window?.rootViewController = LogInViewController()
+                        }
+                    case .notFound:
+                        print("User authorization not found.")
+                        DispatchQueue.main.async {
+                            localData.deleteOpenSession()
+                            localData.deleteAppleSignInUserData()
+                            self.window?.rootViewController = LogInViewController()
+                        }
+                    default:
+                        print("Unknow error getting user authorization.")
+                        DispatchQueue.main.async {
+                            localData.deleteOpenSession()
+                            localData.deleteAppleSignInUserData()
+                            self.window?.rootViewController = LogInViewController()
+                        }
+                    }
+                }
+            }
         } else {
-            window?.rootViewController = LogInViewController()
+            self.window?.rootViewController = LogInViewController()
         }
-        
-        window?.makeKeyAndVisible()
+        self.window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

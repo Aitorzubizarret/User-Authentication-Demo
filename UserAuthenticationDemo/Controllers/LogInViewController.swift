@@ -56,13 +56,28 @@ class LogInViewController: UIViewController {
     }
     
     ///
+    /// Saves open session locally.
+    ///
+    private func saveOpenSession() {
+        let localData: Persistence = Persistence()
+        localData.saveOpenSession()
+    }
+    
+    ///
     /// Saves users data locally.
     ///
     private func saveDataLocally(identifier: String, fullName: String, email: String) {
         // Save data locally.
         let localData: Persistence = Persistence()
         localData.saveAppleSignInUserData(id: identifier, fullName: fullName, email: email)
-        localData.saveOpenSession()
+    }
+    
+    ///
+    /// Gets user data.
+    ///
+    private func getUserLocalData() -> User? {
+        let localData: Persistence = Persistence()
+        return localData.getAppleSignIntUserData()
     }
     
     ///
@@ -120,8 +135,14 @@ extension LogInViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
             // Email.
             let email: String = appleIDCredentials.email ?? ""
             
-            self.saveDataLocally(identifier: userIdentifier, fullName: fullName, email: email)
+            // Check if there is already a user saved locally.
+            if let _ = self.getUserLocalData() {
+                print("There is a user Log In.")
+            } else {
+                self.saveDataLocally(identifier: userIdentifier, fullName: fullName, email: email)
+            }
             
+            self.saveOpenSession()
             self.goToProfile(identifier: userIdentifier, fullName: fullName, email: email)
         }
     }

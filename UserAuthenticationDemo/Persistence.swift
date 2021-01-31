@@ -50,6 +50,13 @@ struct Persistence {
     }
     
     ///
+    /// Deletes locally saved user data.
+    ///
+    func deleteAppleSignInUserData() {
+        self.userDefaults.removeObject(forKey: Keys.appleSignInUserData.rawValue)
+    }
+    
+    ///
     /// Get locally saved User data obtained from Apple Sign In / Authentication service.
     ///
     func getAppleSignIntUserData() -> User?{

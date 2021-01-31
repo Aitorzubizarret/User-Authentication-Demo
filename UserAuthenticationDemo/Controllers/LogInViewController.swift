@@ -93,8 +93,31 @@ extension LogInViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         // Check the received authorization.
         if let appleIDCredentials = authorization.credential as? ASAuthorizationAppleIDCredential {
+            
+            // Identifier.
             let userIdentifier: String = appleIDCredentials.user
-            let fullName: String = appleIDCredentials.fullName?.description ?? ""
+            
+            // Full Name.
+            var fullName: String = ""
+            if let receivedName = appleIDCredentials.fullName?.givenName {
+                fullName = receivedName
+            }
+            if let receivedSurname = appleIDCredentials.fullName?.familyName {
+                if fullName == "" {
+                    fullName = receivedSurname
+                } else {
+                    fullName = fullName + " \(receivedSurname)"
+                }
+            }
+            if let receivedNickname = appleIDCredentials.fullName?.nickname {
+                if fullName == "" {
+                    fullName = receivedNickname
+                } else {
+                    fullName = fullName + " (\(receivedNickname)"
+                }
+            }
+            
+            // Email.
             let email: String = appleIDCredentials.email ?? ""
             
             self.saveDataLocally(identifier: userIdentifier, fullName: fullName, email: email)
@@ -108,5 +131,24 @@ extension LogInViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
     ///
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
         print("Apple Sign-In Error : \(error.localizedDescription)")
+        
+        guard let error = error as? ASAuthorizationError else {
+            return
+        }
+        
+        switch error.code {
+        case .canceled:
+            print("User press cancel button")
+        case .unknown:
+            print("Unknow error")
+        case .invalidResponse:
+            print("Invalid response")
+        case .notHandled:
+            print("Not handlet, maybe comunication error.")
+        case .failed:
+            print("Failed")
+        default:
+            print("Defaul")
+        }
     }
 }
